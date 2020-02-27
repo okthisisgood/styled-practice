@@ -16,14 +16,17 @@ const GlobalStyle = createGlobalStyle`
 //   padding: 20px;
 // `
 
+const Card = styled.div`
+  background-color: #8c7ae6;
+`
+
 const Container = styled.div`
   height:100vh;
   width:100%;
   background-color: #fed330;
-`
-
-const Card = styled.div`
-  background-color: #8c7ae6;
+  ${Card}:first-child {
+    background-color: #40739e;
+  }
 `
 
 const Button = styled.button`
