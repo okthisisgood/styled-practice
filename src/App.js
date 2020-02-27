@@ -1,5 +1,6 @@
 import React from 'react';
-import styled, { createGlobalStyle, css, keyframes } from "styled-components";
+import styled, { createGlobalStyle, ThemeProvider } from "styled-components";
+import theme from "./theme";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -21,6 +22,16 @@ const Container = styled.div`
   background-color: #fed330;
 `
 
+const Card = styled.div`
+  background-color: #8c7ae6;
+`
+
+const Button = styled.button`
+  border-radius: 30px;
+  padding: 25px 15px;
+  background-color: ${props => props.theme.successColor}
+`
+
 // const Input = styled.input.attrs({
 //   required: true
 // })`
@@ -29,7 +40,14 @@ const Container = styled.div`
 // `;
 
 function App() {
-  return (<Container></Container>);
+  return (
+    <ThemeProvider theme={theme}>
+      <Container>
+        <GlobalStyle/>
+        <Form/>
+      </Container>
+    </ThemeProvider>
+  );
 
   // return (<Container>
   //   <GlobalStyle/>
@@ -46,6 +64,10 @@ function App() {
     
   // );
 }
+
+const Form = () => (<Card>
+  <Button>Hello</Button>
+</Card>)
 
 // const Button = styled.button`
 //   border-radius: 50px;
