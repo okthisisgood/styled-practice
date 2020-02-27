@@ -8,8 +8,16 @@ const GlobalStyle = createGlobalStyle`
   } 
 `
 
+const Input = styled.input.attrs({
+  required: true
+})`
+  border-radius: 5px;
+`;
+
 function App() {
-  return (<Container></Container>);
+  return (<Container>
+    <Input placeholder="hello"></Input>
+  </Container>);
   // return (
   //   <Container>
   //     <GlobalStyle/>
